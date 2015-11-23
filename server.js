@@ -127,8 +127,16 @@ var mySpot = req.params[0];
   for (var i = 0; i < fakeDatabase.length; i++) {
     var temp = fakeDatabase[i];
     if (temp.spot == mySpot) {
-      temp.taken = true;
-      console.log(temp.spot + "now taken!");
+        if(temp.taken){
+            temp.taken = false;
+            console.log(temp.spot + "now NOT taken!");
+        }
+        else{
+            temp.taken = true;
+            console.log(temp.spot + "now taken!");
+        }
+
+
       break; // get out of here early!
     }
   }

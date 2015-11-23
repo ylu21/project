@@ -27,13 +27,21 @@
 
 			var canvas = document.getElementById('myCanvas');
 			var context = canvas.getContext('2d');
+			context.canvas.width = window.innerWidth*.99;
+			context.canvas.height = window.innerHeight*.99;
 
 			var imageObj = new Image();
 
 			imageObj.onload = function() {
-			context.drawImage(imageObj, 69, 50);
+			context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
 			};
-			imageObj.src = '../images/gleason.png';
+
+
+			imageObj.src = '../images/gleason.jpg';
+
+
+			context.beginPath();
+
 
 			//CITE: Philip Guo's CSC 210
 			// define a generic Ajax error handler:
@@ -53,7 +61,6 @@
 					success: function( data ) {
 
 
-						context.beginPath();
 
 						for (var i = 0; i < data.length; i=i+2) {
 
@@ -65,9 +72,6 @@
 	  						context.strokeStyle = 'black';
 	  						context.stroke();
 						}
-
-
-
 
 
 			      	},

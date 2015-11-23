@@ -1085,3 +1085,7 @@
 		#footer .icons a {
 			color: #bbb;
 		}
+
+	canvas {
+		background-color: transparent;
+	}
