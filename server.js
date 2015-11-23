@@ -39,8 +39,8 @@ app.use(express.static('frontend'));
 // this script restarts. however, as long as the script is running, this
 // database can be modified at will.
 var fakeDatabase = [
-  {spot: 'GleasonTable1', taken: false, locationx: 500, locationy: 500},
-  {spot: 'GleasonTable2', taken: false, locationx: 500, locationy: 600}
+  {spot: 'GleasonTable1', taken: false, locationx: 1808, locationy: 216},
+  {spot: 'GleasonTable2', taken: false, locationx: 1808, locationy: 320}
 ];
 
 

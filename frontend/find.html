@@ -36,6 +36,9 @@
 			context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
 			};
 
+			//to scale the tables
+			var scalingFactorX = 1-(2048-window.innerWidth)/2048;
+			var scalingFactorY = 1-(1274-window.innerHeight)/1274;
 
 			imageObj.src = '../images/gleason.jpg';
 
@@ -64,11 +67,11 @@
 
 						for (var i = 0; i < data.length; i=i+2) {
 
-						  context.rect(data[i], data[i+1], 20, 20);
+						  context.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, 130*scalingFactorX, 54*scalingFactorY);
 
-						  context.fillStyle = 'red';
+						  context.fillStyle = "rgba(255, 0, 0, 0.5)";;
 	  						context.fill();
-	  						context.lineWidth = 3;
+	  						context.lineWidth = 0;
 	  						context.strokeStyle = 'black';
 	  						context.stroke();
 						}
