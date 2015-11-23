@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="store">
     <head>
-        <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+
         <script src="js/jquery.min.js"></script>
         <script type="text/javascript">
 
@@ -21,6 +21,30 @@
 					dataType: "text",
 
 					data: {spot: $("#spotBox").val()},
+
+					success: function( data ) {
+				        console.log("You received some data!", data);
+				        if (data == 'OK') {
+				          $("#status").html("Successfully created a new user!");
+				        } else {
+				          $("#status").html("Error: could not create a new user!");
+				        }
+			      	},
+				}); //closes .ajax
+
+			});
+
+            $("#testSubmit").click(function(){
+				$.ajax({
+					url: "asdfg/"+ $("#testBox").val(),
+					type: "GET",
+					dataType: "text",
+
+                    data: {spot: $("#testBox").val()},
+
+
+
+				//	data: {spot: $("#testBox").val()},
 
 					success: function( data ) {
 				        console.log("You received some data!", data);
@@ -68,8 +92,6 @@
 		</script>
     </head>
     <body>
-        <script type="text/javascript" src="angular.min.js"></script>
-        <script type="text/javascript" src="app.js"></script>
 
 
 
@@ -86,5 +108,10 @@
 				<div class="mapContainer">
 
 				</div>
+
+                <form>
+                    Name: <input id="testBox" type="text" size="20"/>
+                    <button id="testSubmit">Test GET</button>
+                </form>
     </body>
 </html>

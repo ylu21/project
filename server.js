@@ -16,6 +16,7 @@
 var express = require('express');
 var app = express();
 
+
 // required to support parsing of POST request bodies
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
@@ -87,6 +88,34 @@ $ curl -X GET http://localhost:3000/users/Carol
 app.post('/spots', function (req, res) {
   var postBody = req.body;
   var mySpot = postBody.spot;
+
+  // must have a spot!
+  if (!mySpot) {
+    res.send('ERROR');
+    return; // return early!
+  }
+
+  // check if user's name is already in database; if so, send an error
+  for (var i = 0; i < fakeDatabase.length; i++) {
+    var temp = fakeDatabase[i];
+    if (temp.spot == mySpot) {
+      temp.taken = true;
+      console.log(temp.spot + "now taken!");
+      break; // get out of here early!
+    }
+  }
+
+  // otherwise add the user to the database by pushing (appending)
+  // postBody to the fakeDatabase list
+ // fakeDatabase.push(postBody);
+
+  console.log("Yes: "+mySpot);
+  res.send('OK');
+});
+
+
+app.get('/asdfg/*', function (req, res) {
+var mySpot = req.params[0];
 
   // must have a spot!
   if (!mySpot) {
