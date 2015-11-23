@@ -46,7 +46,18 @@ var fakeDatabase = [
   {area: 'Gleason', hash: 'BFC526BF21C589EA72B93C6B0595C0C0', spot: 'GleasonTable4', taken: false, locationx: 1808, locationy: 526, sizex: 130, sizey: 54},
   {area: 'Gleason', hash: '96DCD789605E3F39947BDE612633A03D', spot: 'GleasonTable5', taken: false, locationx: 1808, locationy: 620, sizex: 130, sizey: 54},
   {area: 'Gleason', hash: '3FC2FFE87B9E30D73A1F171FD1AFCD28', spot: 'GleasonTable6', taken: false, locationx: 1808, locationy: 718, sizex: 130, sizey: 54},
-  {area: 'Gleason', hash: '75F7C9E77F7C93744992CEA90D6DE80A', spot: 'GleasonTable7', taken: false, locationx: 1808, locationy: 834, sizex: 130, sizey: 54}
+  {area: 'Gleason', hash: '75F7C9E77F7C93744992CEA90D6DE80A', spot: 'GleasonTable7', taken: false, locationx: 1808, locationy: 834, sizex: 130, sizey: 54},
+  {area: 'Carlson', hash: '704B048750C871504927FDE5DAE72D2F', spot: 'CarlsonTable1', taken: false, locationx: 112, locationy: 164, sizex: 20, sizey: 20},
+  {area: 'Carlson', hash: '5A8FAF8311F674498A2FDC2246D1B8E4', spot: 'CarlsonTable2', taken: false, locationx: 167, locationy: 142, sizex: 13, sizey: 38},
+  {area: 'Carlson', hash: '9E18E3FD872C6F22C3AA1723DCF5C321', spot: 'CarlsonTable3', taken: false, locationx: 201, locationy: 143, sizex: 13, sizey: 38},
+  {area: 'Carlson', hash: 'F44E5495CC969BFA7922BE71307227CD', spot: 'CarlsonTable4', taken: false, locationx: 231, locationy: 146, sizex: 13, sizey: 38},
+  {area: 'Carlson', hash: '6A9C936E087246A2A1677CC79A010E24', spot: 'CarlsonTable5', taken: false, locationx: 270, locationy: 170, sizex: 20, sizey: 20},
+  {area: 'Carlson', hash: '16A83692587B7C8FAD1B2D3A3DEE6373', spot: 'CarlsonTable6', taken: false, locationx: 295, locationy: 183, sizex: 20, sizey: 20},
+  {area: 'Carlson', hash: '1456AC2842AFD3E60F2C9255C159B7C0', spot: 'CarlsonTable7', taken: false, locationx: 77, locationy: 281, sizex: 13, sizey: 38},
+  {area: 'Carlson', hash: '31C8B259144AA23430469C6486D3A9CC', spot: 'CarlsonTable8', taken: false, locationx: 77, locationy: 332, sizex: 13, sizey: 38},
+  {area: 'Carlson', hash: 'CF8234ADE22B22CB5E0B4C4BC27260BB', spot: 'CarlsonTable9', taken: false, locationx: 87, locationy: 463, sizex: 20, sizey: 20},
+  {area: 'Carlson', hash: 'C68D879301CD047BC3029B2032DF3E4F', spot: 'CarlsonTable10', taken: false, locationx: 120, locationy: 470, sizex: 20, sizey: 20},
+  {area: 'Carlson', hash: '9F1E0284EE82217A948514268E978FD6', spot: 'CarlsonTable11', taken: false, locationx: 165, locationy: 453, sizex: 20, sizey: 20},
 ];
 
 
@@ -137,10 +148,10 @@ var mySpot = req.params[0];
     return; // return early!
   }
 
-  // check if user's name is already in database; if so, send an error
+  //check if hash is in table
   for (var i = 0; i < fakeDatabase.length; i++) {
     var temp = fakeDatabase[i];
-    if (temp.spot == mySpot) {
+    if (temp.hash == mySpot) {
         if(temp.taken==true){
             temp.taken = false;
             console.log(temp.spot + "now NOT taken!");
@@ -177,7 +188,7 @@ app.get('/maps/*', function (req, res) {
   var j = 0;
   for (var i = 0; i < fakeDatabase.length; i++) {
 
-      if(fakeDatabase[i].taken){
+      if(fakeDatabase[i].area==userSpot && fakeDatabase[i].taken){
        myArray[j]=fakeDatabase[i].locationx;
        myArray[j+1]=fakeDatabase[i].locationy;
        myArray[j+2]=fakeDatabase[i].sizex;

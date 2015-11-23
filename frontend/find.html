@@ -36,9 +36,6 @@
 			context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
 			};
 
-			//to scale the tables
-			var scalingFactorX = 1-(2048-window.innerWidth)/2048;
-			var scalingFactorY = 1-(1274-window.innerHeight)/1274;
 
 			imageObj.src = '../images/gleason.jpg';
 
@@ -63,6 +60,9 @@
 
 					success: function( data ) {
 
+						//to scale the tables
+						var scalingFactorX = 1-(2048-window.innerWidth)/2048;
+						var scalingFactorY = 1-(1274-window.innerHeight)/1274;
 
 
 						for (var i = 0; i < data.length; i=i+4) {
@@ -74,6 +74,53 @@
 	  						context.lineWidth = 0;
 	  						context.strokeStyle = 'black';
 	  						context.stroke();
+						}
+
+
+			      	},
+				}); //closes .ajax
+
+			});
+
+
+			var canvas2 = document.getElementById('myCanvas2');
+			var context2 = canvas.getContext('2d');
+			context2.canvas.width = window.innerWidth*.99;
+			context2.canvas.height = window.innerHeight*.99;
+
+			var imageObj2 = new Image();
+
+			imageObj2.onload = function() {
+			context2.drawImage(imageObj2, 0, 0, window.innerWidth, window.innerHeight);
+			};
+
+
+			imageObj2.src = '../images/carlson.jpg';
+
+			context2.beginPath();
+
+			$("#getCarlson").click(function(){
+				$.ajax({
+					url: "maps/Carlson",
+					type: "GET",
+					dataType: "json",
+
+					data: {spot: $("#spotBox").val()},
+
+					success: function( data ) {
+
+						var scalingFactorX = 1-(458-window.innerWidth)/458;
+						var scalingFactorY = 1-(518-window.innerHeight)/518;
+
+						for (var i = 0; i < data.length; i=i+4) {
+
+						  context2.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, data[i+2]*scalingFactorX, data[i+3]*scalingFactorY);
+
+						  context2.fillStyle = "rgba(255, 0, 0, 0.3)";;
+	  						context2.fill();
+	  						context2.lineWidth = 0;
+	  						context2.strokeStyle = 'black';
+	  						context2.stroke();
 						}
 
 
@@ -123,6 +170,14 @@
 				</header>
 				<div class="mapContainer">
 					<canvas id="myCanvas" width="1269" height="788"></canvas>
+				</div>
+
+				<header class="major">
+					<h2>Carlson</h2>
+					<button id="getCarlson">Carlson's Level 2 Map</button>
+				</header>
+				<div class="carlsonContainer">
+					<canvas id="myCanvas2" width="1269" height="788"></canvas>
 				</div>
 			</section>
 
