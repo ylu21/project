@@ -13,6 +13,10 @@
 <body>
     <div class="container" ng-controller="AppCtrl">
          <h1>App</h1>
+         <p ng-repeat="seat in seatlist">
+            {{seat}}
+        </p>
+<!--
          <table class="table">
             <thead>
                 <tr>
@@ -21,13 +25,14 @@
                 </tr>
              </thead>
              <tbody>
-                 <!--forloop-->
+                 forloop
                 <tr ng-repeat="seat in seatlist"> 
                     <td>{{seat.number}}</td>
                     <td>{{seat.condition}}</td>
                  </tr>
              </tbody>
         </table>
+-->
     </div>
 
     <input ng-model="test"> {{test}}
