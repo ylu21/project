@@ -25,6 +25,64 @@
 
 		$(document).ready(function() {
 
+			// var canvas = document.getElementById('myCanvas');
+			// var context = canvas.getContext('2d');
+			// context.canvas.width = window.innerWidth*.99;
+			// context.canvas.height = window.innerHeight*.99;
+			//
+			// var imageObj = new Image();
+			//
+			// imageObj.onload = function() {
+			// context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
+			// };
+			//
+			//
+			// imageObj.src = '../images/gleason.jpg';
+			//
+			//
+			// context.beginPath();
+			//
+			//
+			// //CITE: Philip Guo's CSC 210
+			// // define a generic Ajax error handler:
+			//  	// http://api.jquery.com/ajaxerror/
+			//  	$(document).ajaxError(function() {
+	    	// 	alert("Sorry, there was a problem!");
+			//  	});
+			//
+			// $("#getGleason").click(function(){
+			// 	$.ajax({
+			// 		url: "maps/Gleason",
+			// 		type: "GET",
+			// 		dataType: "json",
+			//
+			// 		data: {spot: $("#spotBox").val()},
+			//
+			// 		success: function( data ) {
+			//
+			// 			//to scale the tables
+			// 			var scalingFactorX = 1-(2048-window.innerWidth)/2048;
+			// 			var scalingFactorY = 1-(1274-window.innerHeight)/1274;
+			//
+			//
+			// 			for (var i = 0; i < data.length; i=i+4) {
+			//
+			// 			  context.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, data[i+2]*scalingFactorX, data[i+3]*scalingFactorY);
+			//
+			// 			  context.fillStyle = "rgba(255, 0, 0, 0.3)";;
+	  // 						context.fill();
+	  // 						context.lineWidth = 0;
+	  // 						context.strokeStyle = 'black';
+	  // 						context.stroke();
+			// 			}
+			//
+			//
+			//       	},
+			// 	}); //closes .ajax
+			//
+			// });
+
+
 			var canvas = document.getElementById('myCanvas');
 			var context = canvas.getContext('2d');
 			context.canvas.width = window.innerWidth*.99;
@@ -37,67 +95,9 @@
 			};
 
 
-			imageObj.src = '../images/gleason.jpg';
-
+			imageObj.src = '../images/carlson.jpg';
 
 			context.beginPath();
-
-
-			//CITE: Philip Guo's CSC 210
-			// define a generic Ajax error handler:
-		  	// http://api.jquery.com/ajaxerror/
-		  	$(document).ajaxError(function() {
-	    		alert("Sorry, there was a problem!");
-		  	});
-
-			$("#getGleason").click(function(){
-				$.ajax({
-					url: "maps/Gleason",
-					type: "GET",
-					dataType: "json",
-
-					data: {spot: $("#spotBox").val()},
-
-					success: function( data ) {
-
-						//to scale the tables
-						var scalingFactorX = 1-(2048-window.innerWidth)/2048;
-						var scalingFactorY = 1-(1274-window.innerHeight)/1274;
-
-
-						for (var i = 0; i < data.length; i=i+4) {
-
-						  context.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, data[i+2]*scalingFactorX, data[i+3]*scalingFactorY);
-
-						  context.fillStyle = "rgba(255, 0, 0, 0.3)";;
-	  						context.fill();
-	  						context.lineWidth = 0;
-	  						context.strokeStyle = 'black';
-	  						context.stroke();
-						}
-
-
-			      	},
-				}); //closes .ajax
-
-			});
-
-
-			var canvas2 = document.getElementById('myCanvas2');
-			var context2 = canvas.getContext('2d');
-			context2.canvas.width = window.innerWidth*.99;
-			context2.canvas.height = window.innerHeight*.99;
-
-			var imageObj2 = new Image();
-
-			imageObj2.onload = function() {
-			context2.drawImage(imageObj2, 0, 0, window.innerWidth, window.innerHeight);
-			};
-
-
-			imageObj2.src = '../images/carlson.jpg';
-
-			context2.beginPath();
 
 			$("#getCarlson").click(function(){
 				$.ajax({
@@ -114,13 +114,13 @@
 
 						for (var i = 0; i < data.length; i=i+4) {
 
-						  context2.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, data[i+2]*scalingFactorX, data[i+3]*scalingFactorY);
+						  context.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, data[i+2]*scalingFactorX, data[i+3]*scalingFactorY);
 
-						  context2.fillStyle = "rgba(255, 0, 0, 0.3)";;
-	  						context2.fill();
-	  						context2.lineWidth = 0;
-	  						context2.strokeStyle = 'black';
-	  						context2.stroke();
+						  context.fillStyle = "rgba(255, 0, 0, 0.3)";;
+	  						context.fill();
+	  						context.lineWidth = 0;
+	  						context.strokeStyle = 'black';
+	  						context.stroke();
 						}
 
 
@@ -164,6 +164,7 @@
 
 		<!-- One -->
 			<section id="one" class="wrapper style1">
+				<!--
 				<header class="major">
 					<h2>Gleason</h2>
 					<button id="getGleason">Gleason's Map</button>
@@ -171,13 +172,14 @@
 				<div class="mapContainer">
 					<canvas id="myCanvas" width="1269" height="788"></canvas>
 				</div>
+			-->
 
 				<header class="major">
 					<h2>Carlson</h2>
 					<button id="getCarlson">Carlson's Level 2 Map</button>
 				</header>
 				<div class="carlsonContainer">
-					<canvas id="myCanvas2" width="1269" height="788"></canvas>
+					<canvas id="myCanvas" width="1269" height="788"></canvas>
 				</div>
 			</section>
 
