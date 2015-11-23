@@ -2,9 +2,89 @@
 <html ng-app="store">
     <head>
         <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+        <script src="js/jquery.min.js"></script>
+        <script type="text/javascript">
+
+		$(document).ready(function() {
+
+			//CITE: Philip Guo's CSC 210
+			// define a generic Ajax error handler:
+		  	// http://api.jquery.com/ajaxerror/
+		  	$(document).ajaxError(function() {
+	    		alert("Sorry, there was a problem!");
+		  	});
+
+			$("#spotSubmit").click(function(){
+				$.ajax({
+					url: "spots/",
+					type: "POST",
+					dataType: "text",
+
+					data: {spot: $("#spotBox").val()},
+
+					success: function( data ) {
+				        console.log("You received some data!", data);
+				        if (data == 'OK') {
+				          $("#status").html("Successfully created a new user!");
+				        } else {
+				          $("#status").html("Error: could not create a new user!");
+				        }
+			      	},
+				}); //closes .ajax
+
+			});
+
+            $("#getGleason").click(function(){
+				$.ajax({
+					url: "maps/Gleason",
+					type: "GET",
+					dataType: "json",
+
+					data: {spot: $("#spotBox").val()},
+
+					success: function( data ) {
+				        console.log("You received some data!", data);
+
+				        if (data.name) {
+				          $("#nameDiv").html("My name is " + data.name);
+				          $("#ageDiv").html("My job is " + data.job);
+				          $("#profileImage").attr("src", data.pet);
+				        } else {
+				          $("#status").html("Error: could not find user!");
+				          // clear the profile display
+				          $("#nameDiv").html("");
+				          $("#ageDiv").html("");
+				          $("#profileImage").attr("src", "");
+				        }
+			      },
+				}); //closes .ajax
+
+			});
+		});
+
+
+
+
+		</script>
     </head>
     <body>
         <script type="text/javascript" src="angular.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
+
+
+
+                <form class="icon fa-area-chart major">
+                    Name: <input id="spotBox" type="text" size="20"/>
+                    <button id="spotSubmit">Take My Spot</button>
+                </form>
+
+
+                <header class="major">
+					<h2>Gleason</h2>
+					<button id="getGleason">Gleason's Map</button>
+				</header>
+				<div class="mapContainer">
+
+				</div>
     </body>
 </html>
