@@ -39,8 +39,14 @@ app.use(express.static('frontend'));
 // this script restarts. however, as long as the script is running, this
 // database can be modified at will.
 var fakeDatabase = [
+//locations are fixed pixels on image (.jpg), scaling happens in canvas draw
   {spot: 'GleasonTable1', taken: false, locationx: 1808, locationy: 216},
-  {spot: 'GleasonTable2', taken: false, locationx: 1808, locationy: 320}
+  {spot: 'GleasonTable2', taken: false, locationx: 1808, locationy: 320},
+  {spot: 'GleasonTable3', taken: false, locationx: 1808, locationy: 430},
+  {spot: 'GleasonTable4', taken: false, locationx: 1808, locationy: 526},
+  {spot: 'GleasonTable5', taken: false, locationx: 1808, locationy: 620},
+  {spot: 'GleasonTable6', taken: false, locationx: 1808, locationy: 718},
+  {spot: 'GleasonTable7', taken: false, locationx: 1808, locationy: 834}
 ];
 
 
