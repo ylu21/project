@@ -40,13 +40,13 @@ app.use(express.static('frontend'));
 // database can be modified at will.
 var fakeDatabase = [
 //locations are fixed pixels on image (.jpg), scaling happens in canvas draw
-  {spot: 'GleasonTable1', taken: false, locationx: 1808, locationy: 216},
-  {spot: 'GleasonTable2', taken: false, locationx: 1808, locationy: 320},
-  {spot: 'GleasonTable3', taken: false, locationx: 1808, locationy: 430},
-  {spot: 'GleasonTable4', taken: false, locationx: 1808, locationy: 526},
-  {spot: 'GleasonTable5', taken: false, locationx: 1808, locationy: 620},
-  {spot: 'GleasonTable6', taken: false, locationx: 1808, locationy: 718},
-  {spot: 'GleasonTable7', taken: false, locationx: 1808, locationy: 834}
+  {area: 'Gleason', hash: '84EBC8AC9D905C20014AD355ECD85110', spot: 'GleasonTable1', taken: false, locationx: 1808, locationy: 216, sizex: 130, sizey: 54},
+  {area: 'Gleason', hash: 'AE21AB7EBE326646E7F9A2EEEFC6646C', spot: 'GleasonTable2', taken: false, locationx: 1808, locationy: 320, sizex: 130, sizey: 54},
+  {area: 'Gleason', hash: '161987612352A37F58F82D373C2DC4DA', spot: 'GleasonTable3', taken: false, locationx: 1808, locationy: 430, sizex: 130, sizey: 54},
+  {area: 'Gleason', hash: 'BFC526BF21C589EA72B93C6B0595C0C0', spot: 'GleasonTable4', taken: false, locationx: 1808, locationy: 526, sizex: 130, sizey: 54},
+  {area: 'Gleason', hash: '96DCD789605E3F39947BDE612633A03D', spot: 'GleasonTable5', taken: false, locationx: 1808, locationy: 620, sizex: 130, sizey: 54},
+  {area: 'Gleason', hash: '3FC2FFE87B9E30D73A1F171FD1AFCD28', spot: 'GleasonTable6', taken: false, locationx: 1808, locationy: 718, sizex: 130, sizey: 54},
+  {area: 'Gleason', hash: '75F7C9E77F7C93744992CEA90D6DE80A', spot: 'GleasonTable7', taken: false, locationx: 1808, locationy: 834, sizex: 130, sizey: 54}
 ];
 
 
@@ -180,7 +180,9 @@ app.get('/maps/*', function (req, res) {
       if(fakeDatabase[i].taken){
        myArray[j]=fakeDatabase[i].locationx;
        myArray[j+1]=fakeDatabase[i].locationy;
-       j=j+2;
+       myArray[j+2]=fakeDatabase[i].sizex;
+       myArray[j+3]=fakeDatabase[i].sizey;
+       j=j+4;
 
        console.log(fakeDatabase[i].locationx);
    }
