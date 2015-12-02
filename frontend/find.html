@@ -24,66 +24,8 @@
 		<script type="text/javascript">
 
 		$(document).ready(function() {
-
-			// var canvas = document.getElementById('myCanvas');
-			// var context = canvas.getContext('2d');
-			// context.canvas.width = window.innerWidth*.99;
-			// context.canvas.height = window.innerHeight*.99;
-			//
-			// var imageObj = new Image();
-			//
-			// imageObj.onload = function() {
-			// context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
-			// };
-			//
-			//
-			// imageObj.src = '../images/gleason.jpg';
-			//
-			//
-			// context.beginPath();
-			//
-			//
-			// //CITE: Philip Guo's CSC 210
-			// // define a generic Ajax error handler:
-			//  	// http://api.jquery.com/ajaxerror/
-			//  	$(document).ajaxError(function() {
-	    	// 	alert("Sorry, there was a problem!");
-			//  	});
-			//
-			// $("#getGleason").click(function(){
-			// 	$.ajax({
-			// 		url: "maps/Gleason",
-			// 		type: "GET",
-			// 		dataType: "json",
-			//
-			// 		data: {spot: $("#spotBox").val()},
-			//
-			// 		success: function( data ) {
-			//
-			// 			//to scale the tables
-			// 			var scalingFactorX = 1-(2048-window.innerWidth)/2048;
-			// 			var scalingFactorY = 1-(1274-window.innerHeight)/1274;
-			//
-			//
-			// 			for (var i = 0; i < data.length; i=i+4) {
-			//
-			// 			  context.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, data[i+2]*scalingFactorX, data[i+3]*scalingFactorY);
-			//
-			// 			  context.fillStyle = "rgba(255, 0, 0, 0.3)";;
-	  // 						context.fill();
-	  // 						context.lineWidth = 0;
-	  // 						context.strokeStyle = 'black';
-	  // 						context.stroke();
-			// 			}
-			//
-			//
-			//       	},
-			// 	}); //closes .ajax
-			//
-			// });
-
-
-			var canvas = document.getElementById('myCanvas');
+			$("#getCarlson").click(function(){
+            var canvas = document.getElementById('myCanvas');
 			var context = canvas.getContext('2d');
 			context.canvas.width = window.innerWidth*.99;
 			context.canvas.height = window.innerHeight*.99;
@@ -98,8 +40,6 @@
 			imageObj.src = '../images/carlson.jpg';
 
 			context.beginPath();
-
-			$("#getCarlson").click(function(){
 				$.ajax({
 					url: "maps/Carlson",
 					type: "GET",

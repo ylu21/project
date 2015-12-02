@@ -101,10 +101,11 @@ $ curl -X GET http://localhost:3000/users/Carol
 // CREATE a new user
 //
 // To test with curl, run:
-//   curl -X POST --data "name=Carol&job=scientist&pet=dog.jpg" http://localhost:3000/users
+//   curl -X POST --data "spot=CarlsonTable11" http://45.79.134.174/spots
 app.post('/spots', function (req, res) {
   var postBody = req.body;
   var mySpot = postBody.spot;
+  var response = 'error';
 
   // must have a spot!
   if (!mySpot) {
@@ -118,10 +119,12 @@ app.post('/spots', function (req, res) {
     if (temp.spot == mySpot) {
         if(temp.taken==true){
             temp.taken = false;
+            response = 'untake';
             console.log(temp.spot + "now NOT taken!");
         }
         else{
             temp.taken = true;
+            response = 'take';
             console.log(temp.spot + "now taken!");
         }
 
@@ -135,7 +138,7 @@ app.post('/spots', function (req, res) {
  // fakeDatabase.push(postBody);
 
   console.log("Yes: "+mySpot);
-  res.send('OK');
+  res.send(response);
 });
 
 
