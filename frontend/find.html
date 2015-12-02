@@ -24,22 +24,32 @@
 		<script type="text/javascript">
 
 		$(document).ready(function() {
+
+			// $("#getGleason").click(function{
+			// 	var canvas = document.getElementById('myCanvas');
+			// 	var context = canvas.getContext('2d');
+			// 	context.canvas.width = window.innerWidth*.99;
+			// 	context.canvas.height = window.innerHeight*.99;
+			//
+			// 	context.clearRect(0, 0, canvas.width, canvas.height);
+			// });
 			$("#getCarlson").click(function(){
-            var canvas = document.getElementById('myCanvas');
-			var context = canvas.getContext('2d');
-			context.canvas.width = window.innerWidth*.99;
-			context.canvas.height = window.innerHeight*.99;
+				var canvas = document.getElementById('myCanvas');
+				var context = canvas.getContext('2d');
+				context.canvas.width = window.innerWidth*.99;
+				context.canvas.height = window.innerHeight*.99;
 
-			var imageObj = new Image();
+				var imageObj = new Image();
 
-			imageObj.onload = function() {
-			context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
-			};
+				imageObj.onload = function() {
+				context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
+				};
 
 
-			imageObj.src = '../images/carlson.jpg';
+				imageObj.src = '../images/carlson.jpg';
 
-			context.beginPath();
+				context.beginPath();
+
 				$.ajax({
 					url: "maps/Carlson",
 					type: "GET",
@@ -54,9 +64,9 @@
 
 						for (var i = 0; i < data.length; i=i+4) {
 
-						  context.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, data[i+2]*scalingFactorX, data[i+3]*scalingFactorY);
+							context.rect(data[i]*scalingFactorX, data[i+1]*scalingFactorY, data[i+2]*scalingFactorX, data[i+3]*scalingFactorY);
 
-						  context.fillStyle = "rgba(255, 0, 0, 0.3)";;
+							context.fillStyle = "rgba(255, 0, 0, 0.3)";
 	  						context.fill();
 	  						context.lineWidth = 0;
 	  						context.strokeStyle = 'black';
@@ -115,8 +125,16 @@
 			-->
 
 				<header class="major">
-					<h2>Carlson</h2>
-					<button id="getCarlson">Carlson's Level 2 Map</button>
+					<table>
+						<tr>
+							<td><h2>Carlson</h2></td>
+							<td><button id="getCarlson">Carlson's Level 2 Map</button></td>
+						</tr>
+						<tr>
+							<td><h2>Gleason</h2></td>
+							<td><button id="getGleason">Gleason Library</button></td>
+						</tr>
+				 	</table>
 				</header>
 				<div class="carlsonContainer">
 					<canvas id="myCanvas" width="1269" height="788"></canvas>
