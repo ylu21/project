@@ -24,20 +24,21 @@
 		<script type="text/javascript">
 
 		$(document).ready(function() {
+			//canvas and context initializing code
+			var canvas = document.getElementById('myCanvas');
+			var context = canvas.getContext('2d');
+			context.canvas.width = window.innerWidth*.99;
+			context.canvas.height = window.innerHeight*.99;
 
-			// $("#getGleason").click(function{
-			// 	var canvas = document.getElementById('myCanvas');
-			// 	var context = canvas.getContext('2d');
-			// 	context.canvas.width = window.innerWidth*.99;
-			// 	context.canvas.height = window.innerHeight*.99;
-			//
-			// 	context.clearRect(0, 0, canvas.width, canvas.height);
-			// });
+
+			$("#getGleason").click(function(){
+				context.clearRect(0, 0, canvas.width, canvas.height);
+			});
+
 			$("#getCarlson").click(function(){
-				var canvas = document.getElementById('myCanvas');
-				var context = canvas.getContext('2d');
-				context.canvas.width = window.innerWidth*.99;
-				context.canvas.height = window.innerHeight*.99;
+
+
+				context.clearRect(0, 0, canvas.width, canvas.height);
 
 				var imageObj = new Image();
 
@@ -78,6 +79,8 @@
 				}); //closes .ajax
 
 			});
+
+
 		});
 
 
