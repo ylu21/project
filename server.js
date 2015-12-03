@@ -40,13 +40,13 @@ app.use(express.static('frontend'));
 // database can be modified at will.
 var fakeDatabase = [
 //locations are fixed pixels on image (.jpg), scaling happens in canvas draw
-  {area: 'Gleason', hash: '84EBC8AC9D905C20014AD355ECD85110', spot: 'GleasonTable1', taken: false, locationx: 1808, locationy: 216, sizex: 130, sizey: 54},
-  {area: 'Gleason', hash: 'AE21AB7EBE326646E7F9A2EEEFC6646C', spot: 'GleasonTable2', taken: false, locationx: 1808, locationy: 320, sizex: 130, sizey: 54},
-  {area: 'Gleason', hash: '161987612352A37F58F82D373C2DC4DA', spot: 'GleasonTable3', taken: false, locationx: 1808, locationy: 430, sizex: 130, sizey: 54},
-  {area: 'Gleason', hash: 'BFC526BF21C589EA72B93C6B0595C0C0', spot: 'GleasonTable4', taken: false, locationx: 1808, locationy: 526, sizex: 130, sizey: 54},
-  {area: 'Gleason', hash: '96DCD789605E3F39947BDE612633A03D', spot: 'GleasonTable5', taken: false, locationx: 1808, locationy: 620, sizex: 130, sizey: 54},
-  {area: 'Gleason', hash: '3FC2FFE87B9E30D73A1F171FD1AFCD28', spot: 'GleasonTable6', taken: false, locationx: 1808, locationy: 718, sizex: 130, sizey: 54},
-  {area: 'Gleason', hash: '75F7C9E77F7C93744992CEA90D6DE80A', spot: 'GleasonTable7', taken: false, locationx: 1808, locationy: 834, sizex: 130, sizey: 54},
+  {area: 'Gleason', hash: '84EBC8AC9D905C20014AD355ECD85110', spot: 'GleasonTable1', taken: false, locationx: 1808, locationy: 216, sizex: 130, sizey: 55},
+  {area: 'Gleason', hash: 'AE21AB7EBE326646E7F9A2EEEFC6646C', spot: 'GleasonTable2', taken: false, locationx: 1808, locationy: 320, sizex: 130, sizey: 55},
+  {area: 'Gleason', hash: '161987612352A37F58F82D373C2DC4DA', spot: 'GleasonTable3', taken: false, locationx: 1808, locationy: 430, sizex: 130, sizey: 55},
+  {area: 'Gleason', hash: 'BFC526BF21C589EA72B93C6B0595C0C0', spot: 'GleasonTable4', taken: false, locationx: 1808, locationy: 526, sizex: 130, sizey: 55},
+  {area: 'Gleason', hash: '96DCD789605E3F39947BDE612633A03D', spot: 'GleasonTable5', taken: false, locationx: 1808, locationy: 620, sizex: 130, sizey: 55},
+  {area: 'Gleason', hash: '3FC2FFE87B9E30D73A1F171FD1AFCD28', spot: 'GleasonTable6', taken: false, locationx: 1808, locationy: 718, sizex: 130, sizey: 55},
+  {area: 'Gleason', hash: '75F7C9E77F7C93744992CEA90D6DE80A', spot: 'GleasonTable7', taken: false, locationx: 1808, locationy: 834, sizex: 130, sizey: 55},
   {area: 'Carlson', hash: '704B048750C871504927FDE5DAE72D2F', spot: 'CarlsonTable1', taken: false, locationx: 112, locationy: 164, sizex: 20, sizey: 20},
   {area: 'Carlson', hash: '5A8FAF8311F674498A2FDC2246D1B8E4', spot: 'CarlsonTable2', taken: false, locationx: 167, locationy: 142, sizex: 13, sizey: 38},
   {area: 'Carlson', hash: '9E18E3FD872C6F22C3AA1723DCF5C321', spot: 'CarlsonTable3', taken: false, locationx: 201, locationy: 143, sizex: 13, sizey: 38},
