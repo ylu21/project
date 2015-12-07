@@ -1,17 +1,12 @@
-// Lectures 11 and 12 - CSC 210 Fall 2015
-// Philip Guo
-
-// This is the backend for the Fakebook web app, which demonstrates CRUD
-// with Ajax using a REST API. (static_files/fakebook.html is the frontend)
-
-// Prerequisites - first run:
-//   npm install express
-//   npm install body-parser
+//Rochester HCI 212 - Dandy Study
+//Jackson Ding, Yichen Lu, and Tom Craw
 //
-// then run:
-//   node server.js
+//Code skeleton uses Professor Guo's CSC 210 lecture code
+//From his code the .ajax calls, request handling, and beginning requirements (ex. var express = require('express')) are all used
+//We also got the idea of using a javascript table (in RAM) as a fakedatabase
 //
-// and the frontend can be viewed at http://localhost:3000/fakebook.html
+//All of the code inside of the URL requests handling has been heavily modified to suit our needs
+//The structure of the fakeDatabase is our own
 
 var express = require('express');
 var app = express();
