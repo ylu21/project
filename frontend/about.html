@@ -47,8 +47,24 @@
 					<div class="row">
 						<div class="4u">
 							<section>
-								<h3>Behind the Scenes:</h3>
-								<p>The primary motivation for Dandelion Study (that's the full name!) is how crowded the prime studying locations here at the University of Rochester can get, especially around finals week. We figured we all have better things to do than to waste our time manually checking locations for space. Does Gleason have space right now? How packed is each level of the Stacks? There's never been a solution to these questions, until Dandelion Study.</p>
+								<h2>Schedule</h2>
+								<table>
+									<tr>
+										<td> November 18 </td><td> New Idea Time </td>
+									</tr>
+									<tr>
+										<td> November 22</td><td> Front End Completed </td>
+									</tr>
+									<tr>
+										<td> November 27 </td><td> Basic 1st Version Complete (Gather Feedback) </td>
+									</tr>
+									<tr>
+										<td> December 2 </td><td> Significant New Features (new map design, etc) App Complete</td>
+									</tr>
+									<tr>
+										<td> December 6 </td><td> Database incorperated, new talk feature</td>
+									</tr>
+								</table>
 								<ul class="actions">
 									<li><a href="#" class="button alt">Learn More</a></li>
 								</ul>
@@ -58,17 +74,64 @@
 						</div>
 						<div class="8u skel-cell-important">
 							<section>
+								<h2>Behind the Scenes:</h2>
+								<p>The primary motivation for Dandelion Study (that's the full name!) is how crowded the prime studying locations here at the University of Rochester can get, especially around finals week. We figured we all have better things to do than to waste our time manually checking locations for space. Does Gleason have space right now? How packed is each level of the Stacks? There's never been a solution to these questions, until Dandelion Study.</p>
+
 								<h2>How it Works:</h2>
-								<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-								<p>Dandy Study relies on students themselves takin the time to tell our system when they are studying in a spot. We thought about other ways of collecting this information, but any form of automated collection (such as motion detection or infared) intrudes on student privacy as well as being cost prohibitive. Using this system, all we need is a QR code per "spot", making it private, cheap, and maintainable. At each spot, you simply scan the QR code with <i>any</i> QR code reader app, and click on the link.</p>
+								<!-- <a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a> -->
+								<p>Dandy Study relies on students themselves takin the time to tell our system when they are studying in a spot. We thought about other ways of collecting this information, but any form of automated collection (such as motion detection or infared) intrudes on student privacy as well as being cost prohibitive. Using this system, all we need is a QR code per "spot", making it private, cheap, and maintainable. At each spot, you simply scan the QR code with our app, and you will have a wealth of options, including our talk feature.</p>
 								<p>This transmits data to our server that someone is using that spot, and when you view the map of that location, you can see your spot marked as taken. If everyone takes a few seconds of their time to use this system, then any student can look at the maps and decide where to study based on current, real time information about avaliable space. Once you're done, just scan the code again. And happy studying.</p>
 								<p>The software behind Dandelion is:
+									<br /> Android
 									<br /> MongoDB
 									<br /> Express
 									<br /> Node.js
 									<br /> Body-Parser
 								</p>
-								<p>We use Express and Nodejs for our server, which is entirely written in JavaScript. MongoDB is our database; we appreciate its performance, scalability, and reliability. Body-Parser let's us parse incoming GET requests based on URL and run scripts according to that.</p>
+								<p><b>Express</b> is the routing software for our server, which is written in JavaScript that runs on <b>NodeJS</b>. <b>MongoDB</b> is our database; we appreciate its performance, scalability, and reliability. <b>Body-Parser</b> let's us parse incoming HTTP requests according to URL and run arbitrary behavior. Having a native <b>Android</b> app allows us a level of security and privacy that is not possible with a simple QR code.</p>
+
+								<h2>Dandy Team</h2>
+								<p>
+									We're a small team, but each member is skilled, dedicated, and effective. What we lack in quantity we overcome with quality.
+								<table>
+									<tbody>
+										<tr>
+											<td>Jackson Ding</td>
+											<td>Intrepid Intellectual</td>
+										</tr>
+										<tr>
+											<td>Yichen Lu</td>
+											<td>Excellent Engineer</td>
+										</tr>
+										<tr>
+											<td>Tom Craw</td>
+											<td>Timely Technician</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<h2>Challenges Faced</h2>
+									<p>
+										We faced many challenges, diverse in nature. In terms of technical challenges one of the most frustrating was the poor state of web browser support for HTML5's canvas element. IE11, for example, does not support the context feature, a feature that's crucial for rendering our avaliability indicators on top of the map.
+										The biggest user-side challegne was in designed a service that was appealing for students to use. When most students were asked informally if they would take the time to download an app for this service, most answered no. This directly lead to the introduction of the "talk" feature, in which a user is exposed to a text box through our app, in which (after scanning the QR code corresponding to the spot) they can submit short comments that will be displayed on the map. This feature met very positive responses with most users and created many interesting opportunties. Students can vent about school or class. They can ask about nearby study groups. If someone's working hard tabling to raise money, they now have another avenue for publicity.
+									</p>
+
+								<h2>User Evaluation</h2>
+									<p>
+										The Dandy Team is highly user focused. We believe if no one wants to use your service, then what value does your service have? At many key points in our design process we conducted informal interviews to get a different perspective on the ideas we were looking at. In addition to this informal interview, we also sent a survey to 10 CSC 171 students. From this valuable feedback, we iterated our service.
+										<br />
+										<br />
+										The following is a list of ideas that can directly trace their inception back to this process:
+										<br />
+										Map Indicators <br />
+										Talk Feature <br />
+										Automatic Expiration of Spots<br />
+
+								<h2>Future Possibilities</h2>
+									<p>
+										Dandy Study has many future possibilities. Wider campus support for more locations, an achievement feature (incorperating spots), a smoother map supporting more browsers, a richer app that works on more platforms, and more.
+										We're very excited when we look toward the future, and we see countless possibilities.
+									</p>
 							</section>
 						</div>
 					</div>
